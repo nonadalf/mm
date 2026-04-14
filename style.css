@@ -70,6 +70,7 @@ main {
 main h1 {
   font-size: 3em;
   color: #1a1a2e;
+  align-items: center;
 }
 main .searchBox {
   display: flex;
