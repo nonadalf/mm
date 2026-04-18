@@ -1,94 +1,119 @@
 @import url('https://fonts.googleapis.com/css2?family=Bpmf+Huninn&family=Comfortaa:wght@300..700&family=Shadows+Into+Light+Two&display=swap');
+
 * {
-  padding: 0;
   margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
-::-webkit-scrollbar {
-  width: 8px;
-}
-::-webkit-scrollbar-track {
-    background: transparent;
-    }
-::-webkit-scrollbar-thumb {
-    background-color: #1a1a2e;
-    border-radius: 4px;
-    }
+
 body {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  background: linear-gradient(to bottom, #aad0ff, #dbccff);
-  background:
-  /* url("nnnoise.svg") */
-  ;
-  background-attachment: fixed;
+  /* تم إزالة flex من هنا لأن الـ main سيقوم بالمهمة */
+  width: 100%;
+  min-height: 100vh;
   font-family: "Bpmf Huninn", sans-serif;
+  overflow-x: hidden;
 }
+
 header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background-color: transparent;
+  z-index: 999;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 1em;
 }
-header .rightSide,
-header .leftSide {
+
+header nav {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
 }
-header .leftSide {
-  justify-content: flex-start;
-}
-header .leftSide .logo{
+
+header nav ul {
+  list-style: none;
   display: flex;
-  align-items: center;
+  gap: 2em;
 }
-header .leftSide .logo img {
-  height: 40px;
-  margin-right: 0.5em;
-}
-header .rightSide {
-  justify-content: flex-end;
-}
-header .rightSide button {
-  color: #1a1a2e;
-  border: none;
-  border-radius: 4px;
+
+header nav ul li {
+  color: #212121;
+  font-size: 18px;
   cursor: pointer;
-  padding: 0.5em;
-  font-size: 1em;
 }
+
 main {
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.492), rgb(255, 164, 181), rgb(255, 255, 255)), 
+    url("iOS\ 14.jfif");
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  min-height: 100vh; /* تغيير من 100% لضمان تغطية الشاشة */
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  flex: 1;
+  justify-content: center; /* لتوسيط المحتوى عمودياً */
+  padding-top: 60px; /* لترك مساحة للهيدر المطلق */
 }
-main h1 {
-  font-size: 3em;
-  color: #1a1a2e;
-  align-items: center;
-}
-main .searchBox {
+
+main .logoContainer {
   display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main .logoContainer img {
+  width: 250px; /* تصغير الحجم قليلاً للتناسب */
+  height: auto;
+  object-fit: contain;
+}
+
+main .boxSearch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  background-color: #ffffff;
+  width: 90%;
+  max-width: 600px; /* تحديد عرض أقصى ليكون التصميم أجمل */
+  border-radius: 50px; /* جعل الحواف دائرية بالكامل لمحرك البحث */
+  padding: 0.5em 1.5em;
   margin-top: 1em;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* إضافة ظل بسيط */
 }
-main .searchBox input {
-  padding: 0.5em;
-  font-size: 1em;
+
+main .boxSearch input {
+  flex: 1; /* يأخذ المساحة المتبقية */
+  height: 40px;
   border: none;
-  border-radius: 4px 0 0 4px;
-  outline: none;
+  outline: none; /* إزالة الإطار عند الضغط */
+  background: transparent;
 }
-main .searchBox button {
-  padding: 0.5em;
-  font-size: 1em;
+
+main .boxSearch button {
+  width: 40px;
+  height: 40px;
   border: none;
-  border-radius: 0 4px 4px 0;
-  background-color: #1a1a2e;
-  color: white;
+  background-color: #212121;
+  color: #fff;
   cursor: pointer;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+
+main .boxSearch button:hover {
+  background-color: #444;
+}
+
+main .boxSearch span {
+  color: #999; /* تغيير اللون ليتناسب مع أيقونة البحث */
+  display: flex;
+  align-items: center;
 }
